@@ -1,0 +1,15 @@
+<html>
+
+<head>
+    <title>Agregar Cursos</title>
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Agregar Curso</button>
+    </form>
+</body>
+
+</html>
