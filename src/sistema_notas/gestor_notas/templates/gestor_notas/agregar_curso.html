@@ -1,15 +1,13 @@
-<html>
-
-<head>
-    <title>Agregar Cursos</title>
-</head>
-
-<body>
-    <form method="POST">
+{% extends 'gestor_notas/base.html' %}
+{% block title %}Agregar Cursos{% endblock %}
+{% block content %}
+<div class="form-container">
+    <form method="POST" class="form">
         {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Agregar Curso</button>
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="form-submit-btn">Agregar Cursos</button>
     </form>
-</body>
-
-</html>
+</div>
+{% endblock %}

@@ -1,15 +1,13 @@
-<html>
-
-<head>
-    <title>Agregar Nota</title>
-</head>
-
-<body>
-    <form method="POST">
+{% extends 'gestor_notas/base.html' %}
+{% block title %}Agregar Notas{% endblock %}
+{% block content %}
+<div class="form-container">
+    <form method="POST" class="form">
         {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Agregar Nota</button>
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="form-submit-btn">Agregar Nota</button>
     </form>
-</body>
-
-</html>
+</div>
+{% endblock %}
