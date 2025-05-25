@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Curso</title>
+    <style>
+        body {
+            background: #1a2238;
+            color: #eaeaea;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #9daaf2;
+            text-align: center;
+            margin-top: 40px;
+            letter-spacing: 2px;
+        }
+        form {
+            background: #222b45;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 12px 0 20px 0;
+            border: none;
+            border-radius: 6px;
+            background: #28304a;
+            color: #eaeaea;
+            font-size: 1em;
+        }
+        button {
+            background: #394867;
+            color: #eaeaea;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #576cbc;
+        }
+        a {
+            color: #9daaf2;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #576cbc;
+            text-decoration: underline;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crear Curso</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <div class="nav-links">
+        <a href="{% url 'crear_alumno' %}">Crear alumno</a> |
+        <a href="{% url 'crear_nota' %}">Registrar nota</a> |
+        <a href="{% url 'lista_notas' %}">Ver notas</a>
+    </div>
+</body>
+</html>
