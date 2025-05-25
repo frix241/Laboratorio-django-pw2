@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Notas</title>
+</head>
+<body>
+    <h1>Lista de Notas</h1>
+    <ul>
+        {% for nota in notas %}
+            <li>{{ nota.alumno }} - {{ nota.curso }}: {{ nota.nota }}</li>
+        {% empty %}
+            <li>No hay notas registradas.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_alumno' %}">Crear alumno</a> |
+    <a href="{% url 'crear_curso' %}">Crear curso</a> |
+    <a href="{% url 'crear_nota' %}">Registrar nota</a>
+</body>
+</html>
